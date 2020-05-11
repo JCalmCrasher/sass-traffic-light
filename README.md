@@ -1,5 +1,5 @@
 # sass-traffic-light
-A simple html css framework powered by SASS
+A simple html traffic design powered by SASS
 
 ## Installation
 Clone from the repo https://github.com/JCalmCrasher/sass-traffic-light
