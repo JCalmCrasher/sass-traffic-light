@@ -1,0 +1,26 @@
+@mixin style-traffic-light {
+    background-size: 5px 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+@mixin box_shadow($color) {
+    box-shadow:
+        0 0 20px #111 inset,
+        0 0 10px $color;
+}
+
+@mixin position($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin border($width, $style, $color) {
+    border: $width $style $color;
+}
+
+@mixin animation($duration, $color, $name) {
+    animation: $duration $color $name;
+}

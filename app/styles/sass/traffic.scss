@@ -1,0 +1,184 @@
+@import './variables';
+@import './mixins';
+
+html {
+  background: $html-color;
+  padding: $html-padding;
+  width: $html-width;
+  height: $html-height;
+  margin: 0 auto;
+}
+
+.trafficlight {
+  background: $traffic-bg;
+  background-image: $traffic-light-img;
+  width: $html-width;
+  height: $height;
+  border-radius: $height/20;
+  position: relative;
+  border: solid 3px yellow;
+}
+
+.trafficlight:before {
+  background: $bg;
+  background-image: radial-gradient(rgb(129, 251, 30), #000);
+  content: "";
+  width: $html-width;
+  height: $height - 250;
+  margin: 0 auto;
+  position: absolute;
+  top: $height - 420;
+  margin-left: $height - $height;
+  border-radius: $border-radius;
+  z-index: -1;
+}
+
+.trafficlight:after {
+  background: $bg;
+  background-image: $traffic-light;
+  content: "";
+  width: $height - 350;
+  height: $height + 50;
+  margin-left: $height - 360;
+  position: absolute;
+  top: $height - 250;
+  z-index: -1;
+}
+
+.protector {
+  background: transparent;
+  width: 180px;
+  height: 0;
+  position: absolute;
+  top: 20px;
+  left: -35px;
+  border-right: solid 30px transparent;
+  border-left: solid 30px transparent;
+  border-top: solid 90px #111;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.protector:nth-child(2) {
+  top: 140px;
+}
+
+.protector:nth-child(3) {
+  top: 260px;
+}
+
+.red {
+  background: red;
+  background-image: $red-gradient;
+  @include style-traffic-light;
+  @include position(absolute, 20px, 35px);
+  @include animation(10s, red, infinite);
+  @include border(2px, dotted, white);
+  @include box_shadow(red);
+}
+
+.yellow {
+  background: yellow;
+  background-image: $yellow-gradient;
+  @include style-traffic-light;
+  @include position(absolute, 145px, 35px);
+  @include animation(10s, yellow, infinite);
+  @include border(2px, dotted, white);
+  @include box_shadow(yellow);
+}
+
+.green {
+  background: lime;
+  background-image: $green-gradient;
+  @include style-traffic-light;
+  @include position(absolute, 270px, 35px);
+  @include animation(10s, green, infinite);
+  @include border(2px, dotted, white);
+  @include box_shadow(green);
+}
+
+@keyframes red {
+  0% {
+    opacity: 1
+  }
+
+  20% {
+    opacity: 1
+  }
+
+  40% {
+    opacity: 1
+  }
+
+  60% {
+    opacity: .1
+  }
+
+  80% {
+    opacity: .1
+  }
+
+  100% {
+    opacity: .1
+  }
+}
+
+@keyframes yellow {
+  0% {
+    opacity: .1
+  }
+
+  20% {
+    opacity: .1
+  }
+
+  40% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: .1
+  }
+
+  60% {
+    opacity: .1
+  }
+
+  80% {
+    opacity: .1
+  }
+
+  86% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes green {
+  0% {
+    opacity: .1
+  }
+
+  40% {
+    opacity: .1
+  }
+
+  60% {
+    opacity: 1
+  }
+
+  80% {
+    opacity: 1
+  }
+
+  83% {
+    opacity: .1
+  }
+
+  100% {
+    opacity: .1
+  }
+}
